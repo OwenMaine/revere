@@ -500,7 +500,7 @@ button {
  }
  
  .about_img {
-     width: 50%; /* Make image take 50% of the width */
+     width: 100%; /* Make image take 50% of the width */
      position: relative; /* For overlay positioning */
      box-sizing: border-box; /* Include padding in width calculation */
      padding-left: 20px; /* Add spacing between text and image */
