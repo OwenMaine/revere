@@ -463,45 +463,79 @@ button {
 .about {
      background-color: #fff;
      padding-top: 85px;
-}
-
-.about .titlepage {
+     overflow: hidden; /* Prevent potential horizontal scroll */
+ }
+ 
+ .about .container {
+     max-width: 1200px; /* Adjust as needed */
+     margin: 0 auto; /* Center the content */
+     padding-left: 15px; /* Add some padding on the left */
+     padding-right: 15px; /* Add some padding on the right */
+ }
+ 
+ .about .row {
+     display: flex; /* Enable flexbox */
+     flex-wrap: wrap; /* Allow items to wrap to the next line */
+     align-items: center; /* Vertically align items in the center */
+ }
+ 
+ .about .titlepage {
      text-align: left;
      padding-bottom: 0;
-     max-width: 443px;
-     width: 100%;
-     float: right;
-}
-
-.about .titlepage h2 {
+     width: 100%; /* Make titlepage take full width */
+     max-width: 50%; /* Adjust as needed, should add up to 100% with image */
+     box-sizing: border-box; /* Include padding in width calculation */
+     padding-right: 20px; /* Add spacing between text and image */
+ }
+ 
+ .about .titlepage h2 {
      margin-bottom: 35px;
-}
-
-.about .titlepage p {
+ }
+ 
+ .about .titlepage p {
      font-weight: 400;
      font-size: 17px;
      line-height: 28px;
      padding-bottom: 35px;
-}
-
-.about_img {
-     margin-right: 40px;
-     overflow: hidden;
-}
-
-.about_img figure {
+ }
+ 
+ .about_img {
+     width: 50%; /* Make image take 50% of the width */
+     position: relative; /* For overlay positioning */
+     box-sizing: border-box; /* Include padding in width calculation */
+     padding-left: 20px; /* Add spacing between text and image */
+ }
+ 
+ .about_img::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-image: url("images/background.jpg"); /* Replace with your image path */
+     background-size: cover;
+     background-position: center;
+     opacity: 0.5; /* Adjust overlay opacity */
+     z-index: -1; /* Place overlay behind the image */
+ }
+ 
+ .about_img figure {
      margin: 0;
-}
-
-.about_img figure img {
+     overflow: hidden; /* Clip the image to the figure bounds */
+ }
+ 
+ .about_img figure img {
      width: 100%;
      transition: all .5s;
-}
-
-.about_img figure img:hover {
-     transform: scale(1.2);
-}
-/** end about section **/
+     vertical-align: middle; /* Align image vertically in the middle */
+ }
+ 
+ .about_img figure img:hover {
+     transform: scale(1.1); /* Reduced scale for better fit */
+ }
+ 
+ /** end about section **/
 
 /** our_room section **/
 
